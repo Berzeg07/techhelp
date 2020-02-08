@@ -1,0 +1,32 @@
+.\@search {
+  display: flex;
+  height: 50px;
+
+  input {
+    padding: 15px 60px 15px 70px;
+    border: 2px solid $red;
+    font-size: 16px;
+    width: 480px;
+    background: url(../images/icons/search-icon.svg) 20px center no-repeat;
+    border-radius: 5px 0 0 5px;
+
+    &::placeholder {
+      color: #808799;
+    }
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: $red;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0 5px 5px 0;
+
+    &:hover {
+      background-color: darken($red, 10%);
+    }
+  }
+}
+

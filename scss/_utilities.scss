@@ -1,0 +1,407 @@
+
+/*********** DISPLAYS ***********/
+$column-count: 12;
+$display-breakpoints: (
+        xs: '(max-width: 425px)',
+        sm: '(min-width: 426px) and (max-width: 576px)',
+        md: '(min-width: 577px) and (max-width: 767px)',
+        lg: '(min-width: 768px) and (max-width: 992px)',
+        xl: '(min-width: 993px)'
+);
+/************************************/
+
+
+
+
+/*********** MIXINS ***********/
+@mixin media ($name) {
+  @media screen and #{map-get($display-breakpoints, $name)} {
+    @content;
+  }
+}
+@mixin gap-childrens($size) {
+  margin-left: -#{$size / 2}px;
+  margin-right: -#{$size / 2}px;
+
+  & > * {
+    padding-left: calc(#{$size}px / 2);
+    padding-right: calc(#{$size}px / 2);
+    margin-bottom: #{$size}px;
+  }
+
+}
+/************************************/
+
+
+
+
+
+/*********** Small RESET styles ***********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul, ol {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  display: inline-flex;
+  align-items: end;
+
+  &.\@underline {
+    border-color: currentColor;
+    transition: all .2s ease;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
+input, button, textarea {
+  font-family: inherit;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+/************************************/
+
+
+
+
+/*********** Font sizes ***********/
+$font-sizes: (14, 16, 18, 20, 22, 24, 28, 32, 38, 52);
+
+
+@each $fz in $font-sizes {
+  .fs\:#{$fz} {
+    font-size: #{$fz}px;
+  }
+}
+@each $dName, $dProp in $display-breakpoints {
+  @include media($dName) {
+    @each $fz in $font-sizes {
+      .fs\:#{$dName}-#{$fz} {
+        font-size: #{$fz}px;
+      }
+    }
+  }
+}
+/************************************/
+
+
+
+
+
+
+
+/*********** Margins and Paddings ***********/
+$margins: (0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 100);
+$paddings: (0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 75, 80, 100);
+
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $m in $margins {
+  .mt-#{$m} {
+    margin-top: #{$m}px;
+  }
+  .mb-#{$m} {
+    margin-bottom: #{$m}px;
+  }
+  .ml-#{$m} {
+    margin-left: #{$m}px;
+  }
+  .mr-#{$m} {
+    margin-right: #{$m}px;
+  }
+  .mx-#{$m} {
+    margin-left: #{$m}px;
+    margin-right: #{$m}px;
+  }
+  .my-#{$m} {
+    margin-top: #{$m}px;
+    margin-bottom: #{$m}px;
+  }
+}
+@each $p in $paddings {
+  .pt-#{$p} {
+    padding-top: #{$p}px;
+  }
+  .pb-#{$p} {
+    padding-bottom: #{$p}px;
+  }
+  .pl-#{$p} {
+    padding-left: #{$p}px;
+  }
+  .pr-#{$p} {
+    padding-right: #{$p}px;
+  }
+  .px-#{$p} {
+    padding-left: #{$p}px;
+    padding-right: #{$p}px;
+  }
+  .py-#{$p} {
+    padding-top: #{$p}px;
+    padding-bottom: #{$p}px;
+  }
+}
+@each $name, $val in $display-breakpoints {
+  @include media($name) {
+    @each $m in $margins {
+      .mt\:#{$name}-#{$m} {
+        margin-top: #{$m}px;
+      }
+      .mb\:#{$name}-#{$m} {
+        margin-bottom: #{$m}px;
+      }
+      .ml\:#{$name}-#{$m} {
+        margin-left: #{$m}px;
+      }
+      .mr\:#{$name}-#{$m} {
+        margin-right: #{$m}px;
+      }
+      .mx\:#{$name}-#{$m} {
+        margin-left: #{$m}px;
+        margin-right: #{$m}px;
+      }
+      .my\:#{$name}-#{$m} {
+        margin-top: #{$m}px;
+        margin-bottom: #{$m}px;
+      }
+    }
+    @each $p in $paddings {
+      .pt\:#{$name}-#{$p} {
+        padding-top: #{$p}px;
+      }
+      .pb\:#{$name}-#{$p} {
+        padding-bottom: #{$p}px;
+      }
+      .pl\:#{$name}-#{$p} {
+        padding-left: #{$p}px;
+      }
+      .pr\:#{$name}-#{$p} {
+        padding-right: #{$p}px;
+      }
+      .px\:#{$name}-#{$p} {
+        padding-left: #{$p}px;
+        padding-right: #{$p}px;
+      }
+      .py\:#{$name}-#{$p} {
+        padding-top: #{$p}px;
+        padding-bottom: #{$p}px;
+      }
+    }
+
+    .mt-#{$name}-auto {
+      margin-top: auto;
+    }
+    .mb-#{$name}-auto {
+      margin-bottom: auto;
+    }
+    .ml-#{$name}-auto {
+      margin-left: auto;
+    }
+    .mr-#{$name}-auto {
+      margin-right: auto;
+    }
+    .my-#{$name}-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .mx-#{$name}-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+/************************************/
+
+
+
+
+/*********** Flex utilities ***********/
+.fd-r {
+  flex-direction: row;
+}
+.fd-c {
+  flex-direction: column;
+}
+.jc-start {
+  justify-content: flex-start;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-end {
+  justify-content: flex-end;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-se {
+  justify-content: space-evenly;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+.ai-end {
+  align-items: flex-end;
+}
+.ai-stretch {
+  align-items: stretch;
+}
+.ai-center {
+  align-items: center;
+}
+.ai-base {
+  align-items: baseline;
+}
+
+@each $dName, $dVal in $display-breakpoints {
+  @include media($dName) {
+    .fd\:#{$dName}-r {
+      flex-direction: row;
+    }
+    .fd\:#{$dName}-c {
+      flex-direction: column;
+    }
+
+    .jc\:#{$dName}-start {
+      justify-content: flex-start;
+    }
+    .jc\:#{$dName}-center {
+      justify-content: center;
+    }
+    .jc\:#{$dName}-end {
+      justify-content: flex-end;
+    }
+    .jc\:#{$dName}-sb {
+      justify-content: space-between;
+    }
+    .jc\:#{$dName}-sa {
+      justify-content: space-around;
+    }
+    .jc\:#{$dName}-se {
+      justify-content: space-evenly;
+    }
+
+    .ai\:#{$dName}-start {
+      align-items: flex-start;
+    }
+    .ai\:#{$dName}-end {
+      align-items: flex-end;
+    }
+    .ai\:#{$dName}-stretch {
+      align-items: stretch;
+    }
+    .ai\:#{$dName}-center {
+      align-items: center;
+    }
+    .ai\:#{$dName}-base {
+      align-items: baseline;
+    }
+  }
+}
+/************************************/
+
+
+
+
+
+/*********** GRID ***********/
+
+.dflex {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.grid\:lastic > * {flex-grow: 1;}
+
+@for $i from $column-count through 1 {
+  .col\:#{$i} {
+    flex-basis: 100% / 12 * $i;
+  }
+}
+.col\:auto {
+  flex-basis: auto;
+  width: auto;
+}
+@each $pointName, $pointProp in $display-breakpoints {
+  @include media($pointName) {
+    @for $i from $column-count through 1 {
+      .col\:#{$pointName}-#{$i} {
+        flex-basis: 100% / 12 * $i;
+      }
+    }
+    .col\:#{$pointName}-auto {
+      flex-basis: auto;
+      width: auto;
+    }
+  }
+}
+/************************************/
+
+
+
+
+
+
+
+
+/*********** Block Sizes ***********/
+.w\:full {
+  width: 100%;
+}
+.h\:full {
+  height: 100%;
+}
+@each $dName, $dVal in $display-breakpoints {
+  @include media($dName) {
+    .w\:#{$dName}-full {
+      width: 100%;
+    }
+    .h\:#{$dName}-full {
+      height: 100%;
+    }
+  }
+}
+/************************************/
+
+
+/*********** Other styles ***********/
+.img-cover {
+  overflow: hidden;
+  position: relative;
+
+  img {width: 100%;height: 100%;object-fit: cover;position: absolute;}
+}
+
+
+/************************************/
