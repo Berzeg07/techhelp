@@ -7839,6 +7839,20 @@ body.overflow{
     margin: 0 auto 25px;
 }
 
+.adress-slide{
+    padding: 15px 0px;
+}
+
+.adress-slide .caption{
+    color: #FF4769;
+    font-weight: bold;
+    font-size: 16px;
+}
+.adress-slide .phone{
+    color: #FF4769;
+    font-weight: bold;
+}
+
 /* media queries =============================================================*/
 @media(max-width: 374px){
     .mobile-dropdown .mob-search{
@@ -7880,8 +7894,16 @@ body.overflow{
     .copy{
         margin: 25px 0px;
     }
+    .main-slider .controls button{
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
 }
 @media(min-width: 768px){
+    .adress-slide__item{
+        text-align: center;
+    }
     .mobile-dropdown__nav li{
         width: 40%;
     }
@@ -7906,8 +7928,32 @@ body.overflow{
     }
 }
 @media(max-width: 991px){
+    .main-slider .slide .form{
+        margin: 20px auto 0;
+    }
+    .avatar__slider .title{
+        text-align: center;
+    }
+    .main-slider .slide .form .avatar h2{
+        font-size: 21px;
+        display: inline-block;
+    }
+    .main-slider .slide .form .avatar .text{
+        font-size: 22px;
+    }
+    .main-slider .slide .form .avatar__slider .img{
+        display: none;
+    }
+
     footer.footer .links{
         margin-top: 20px;
+    }
+
+    .main-slider .controls-row .ui-select{
+        width: 100%;
+        min-width: auto;
+        margin: 0;
+        margin-bottom: 25px;
     }
 }
 @media(min-width: 992px){
@@ -7941,11 +7987,51 @@ body.overflow{
     }
 }
 @media(min-width: 992px) and (max-width: 1279px){
+
+    .main-slider .controls-row .ui-select{
+        display: block;
+        margin-bottom: 25px;
+    }
+    .main-slider .controls{
+        padding: 0;
+    }
     .item_mr{
         margin-right: 55px;
     }
 }
 @media(max-width: 1279px){
+    .main-slider .controls{
+        padding: 0;
+    }
+    .main-slider .controls .label{
+        font-size: 13px;
+        margin-bottom: 25px;
+        position: static;
+    }
+    .main-slider .slide{
+        height: auto;
+    }
+    .main-slider .controls-row{
+        padding-bottom: 80px;
+    }
+    .main-slider .controls .label::before, .main-slider .controls .label::after{
+        display: none;
+    }
+    .main-slider .controls{
+        border: none;
+        margin-top: 50px;
+    }
+    .main-slider .foot{
+        display: none;
+    }
+    .main-slider .controls-row{
+        display: block;
+        text-align: center;
+    }
+
+    .main-slider .slick-slider .slick-arrow{
+        display: none !important;
+    }
     footer.footer .footer-contacts{
         margin-top: 25px;
     }

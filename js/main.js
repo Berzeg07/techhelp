@@ -5,20 +5,19 @@ $(document).ready(function() {
     //     $(this).find('.dropdown-menu').toggleClass('active');
     // })
 
-    $(function(){
+    $(function() {
         $(window).scroll(function() {
-            if($(this).scrollTop() >= 40) {
+            if ($(this).scrollTop() >= 40) {
                 $('.mobile-header').addClass('stickytop');
                 $('.mobile-dropdown').addClass('top');
-            }
-            else{
+            } else {
                 $('.mobile-header').removeClass('stickytop');
                 $('.mobile-dropdown').removeClass('top');
             }
         });
     });
 
-    $('.burger').click(function(){
+    $('.burger').click(function() {
         $(this).toggleClass('active');
         $('.mobile-dropdown').fadeToggle();
         $('body').classToggle('overflow');
@@ -30,6 +29,39 @@ $(document).ready(function() {
         fade: true,
         speed: 600,
         dots: true
+    });
+
+    $('#adress-slide').slick({
+        slidesToShow: 1,
+        arrows: false,
+        // fade: true,
+        speed: 600,
+        // dots: true
+        centerMode: true,
+        infinite: true,
+        centerPadding: '20px',
+        responsive: [{
+
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3
+            }
+
+        }, {
+
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2
+            }
+
+        }, {
+
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1
+            }
+
+        }]
     });
 
 
@@ -48,8 +80,8 @@ $(document).ready(function() {
         dots: true
     });
 
-//Yandex map API
-    ymaps.ready(function () {
+    //Yandex map API
+    ymaps.ready(function() {
         const myMap = new ymaps.Map('map', {
             center: [55.753215, 37.622504],
             zoom: 8,
