@@ -6664,6 +6664,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+          align-items: end;
 }
 .models-cards .card-model .pay .brand {
   display: -webkit-box;
@@ -7654,14 +7655,7 @@ footer.footer .footer-copy {
 }
 
 .logo-mob{
-    width: 180px;
-    margin: 0 auto;
-}
-
-.logo-mob img{
-    width: 100%;
-    height: auto;
-    display: block;
+    text-align: center;
 }
 
 .burger{
@@ -7914,13 +7908,43 @@ body.overflow{
     margin-bottom: 28px;
 }
 
+.models-cards .card-model .pay_mob{
+    margin-top: 15px;
+}
+
 /* media queries =============================================================*/
 @media(max-width: 374px){
+    .models-cards .card-model .pay{
+        display: block;
+    }
     .mobile-dropdown .mob-search{
         font-size: 11px;
     }
+    .models-cards .card-model .user-info{
+        display: block;
+    }
+    .models-cards .card-model .user-info .photo{
+        margin: 0 auto 20px;
+    }
+    .models-cards .card-model .user-info .title, .models-cards .card-model .user-info .name{
+        text-align: center;
+    }
+    .models-cards .card-model .rating{
+        justify-content: center;
+    }
+    .models-cards .card-model .contacts .map-button{
+        padding: 10px 5px 10px 0px;
+        font-size: 14px;
+    }
+    .models-cards .card-model .info-grid .caption{
+        font-size: 14px;
+    }
 }
 @media(max-width: 767px){
+    .models-cards .card-model .pay .pay-types, .models-cards .card-model .pay .brand{
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
     footer.footer .footer-contacts .pay{
         width: 100%;
         text-align: center;
@@ -7992,6 +8016,10 @@ body.overflow{
     }
 }
 @media(max-width: 991px){
+    .table .table-row{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
     .models-list > li{
         width: auto;
     }
@@ -8036,6 +8064,10 @@ body.overflow{
     }
     .hidden-xs{
         display: none;
+    }
+    .table .table-row > .col:nth-child(1){
+        width: 100%;
+        margin-bottom: 0px;
     }
 }
 @media(min-width: 992px){
@@ -8123,14 +8155,6 @@ body.overflow{
     .container{
         padding-left: 10px;
         padding-right: 10px;
-    }
-    .table .table-row > .col:nth-child(1){
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    .table .table-row{
-        flex-wrap: wrap;
-        justify-content: space-around;
     }
     .table .table-content > .table-row{
         padding: 12px 10px;
@@ -8291,6 +8315,28 @@ body.overflow{
     }
 }
 @media(max-width: 1599px){
+    .models-cards .card-model .user-info{
+        margin-top: 50px;
+    }
+    .models-cards .card-model .pay_desc{
+        display: none;
+    }
+    .models-cards .card-model{
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        padding: 10px;
+    }
+    .models-cards .card-model .column{
+        width: 100%;
+    }
+    .models-cards .card-model .column:nth-child(1){
+        padding-right: 0;
+    }
+    .models-cards .card-model .photos-slider{
+        margin: 0 auto;
+    }
     .steps-form .step1::before, .steps-form .step3::before, .steps-form .step4::before{
         font-size: 30px;
     }
@@ -8326,6 +8372,9 @@ body.overflow{
     }
 }
 @media(min-width: 1600px){
+    .models-cards .card-model .pay_mob{
+        display: none;
+    }
     .header-nav > ul > li {
         margin-right: 35px;
     }

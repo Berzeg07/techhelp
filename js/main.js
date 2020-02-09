@@ -20,7 +20,7 @@ $(document).ready(function() {
     $('.burger').click(function() {
         $(this).toggleClass('active');
         $('.mobile-dropdown').fadeToggle();
-        $('body').classToggle('overflow');
+        $('body').toggleClass('overflow');
     });
 
 
