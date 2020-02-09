@@ -42,7 +42,7 @@ $(document).ready(function() {
         centerPadding: '20px',
         responsive: [{
 
-            breakpoint: 992,
+            breakpoint: 1280,
             settings: {
                 slidesToShow: 3
             }
@@ -67,9 +67,45 @@ $(document).ready(function() {
 
     $('#brands-slider').slick({
         slidesToShow: 11,
-        slidesToScroll: 11,
+        slidesToScroll: 2,
         speed: 600,
-        dots: true
+        dots: true,
+        responsive: [{
+
+            breakpoint: 1280,
+            settings: {
+                slidesToShow: 10
+            }
+
+        }, {
+
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 8
+            }
+
+        }, {
+
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 5
+            }
+
+        }, {
+
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3
+            }
+
+        }, {
+
+            breakpoint: 400,
+            settings: {
+                slidesToShow: 2
+            }
+
+        }]
     });
 
     $('.photos-slider').slick({

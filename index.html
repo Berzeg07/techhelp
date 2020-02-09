@@ -782,6 +782,17 @@
 
 		</section>
 
+		<ul class="mobile-request">
+			<li>
+				<div class="mobile-request__caption">Записаться на ремонт или диагностику</div>
+			</li>
+			<li>
+				<a href="tel:+7 495 432-07-77" class="mobile-request__tel">+7 495 432-07-77</a>
+			</li>
+			<li>
+				<button class="ui-button mobile-request__btn">Онлайн заявка на ремонт</button>
+			</li>
+		</ul>
 
 		<section class="section desc">
 			<div class="container">
@@ -935,10 +946,16 @@
 					<div class="table-head">
 						<div class="table-row">
 							<div class="col">Наименование работ</div>
-							<div class="col">Цены на ремонт</div>
-							<div class="col">Сроки ремонта</div>
-							<div class="col"></div>
+							<div class="col hidden-xs">Цены на ремонт</div>
+							<div class="col hidden-xs">Сроки ремонта</div>
+							<div class="col hidden-xs"></div>
 						</div>
+					</div>
+					<div class="table__mob hidden-lg">
+						<ul>
+							<li>Сроки ремонта</li>
+							<li>Цены на ремонт</li>
+						</ul>
 					</div>
 					<div class="table-content">
 						<div class="table-row">
@@ -1084,12 +1101,13 @@
 
 
 		<section class="section-call">
-			<div class="container">
+			<div class="container hidden-xs">
 				<h2 class="section-title">Онлайн заявка на ремонт</h2>
 			</div>
 			<div class="bg">
 				<div class="container">
 					<form action="#" class="form">
+						<h2 class="section-title section-call__title hidden-lg">Онлайн заявка на ремонт</h2>
 						<div class="controls">
 							<input type="text" class="ui-input" placeholder="Имя">
 							<input type="text" class="ui-input" placeholder="Телефон">
@@ -1684,7 +1702,7 @@
 
 	</main>
 
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=719481d4-cbf7-4ff5-aff9-ebf6e9a94d1e&lang=ru_RU"></script>
+	<!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=719481d4-cbf7-4ff5-aff9-ebf6e9a94d1e&lang=ru_RU"></script> -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/jquery.maskedinput.min.js"></script>
