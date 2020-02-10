@@ -6581,20 +6581,55 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 20px;
   padding-left: 25px;
 }
 .breadcrumbs a {
   color: #677681;
   font-size: 15px;
-  display: -webkit-inline-box;
+  /*display: -webkit-inline-box;
   display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-flex;*/
+  display: inline-block;
+  position: relative;
   border-bottom: 1px solid currentColor;
 }
+
+.breadcrumbs li:not(:first-child) a{
+    margin-right: 30px;
+}
+
+.breadcrumbs li:not(:first-child) a:after{
+    content: '';
+    position: absolute;
+    right: -26px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url('../images/str.png') no-repeat center;
+}
+
+.breadcrumbs .breadcrumbs__dropdown li + li:before{
+    display: none;
+}
+
+.breadcrumbs .breadcrumbs__dropdown a{
+    margin-right: 0;
+}
+
+.breadcrumbs__dropdown a:after{
+    display: none;
+}
+
 .breadcrumbs a:hover {
   border-color: transparent;
 }
+
+.breadcrumbs li{
+    position: relative;
+}
+
 .breadcrumbs li + li:before {
   content: '/';
   display: -webkit-inline-box;
@@ -6602,6 +6637,30 @@ body {
   display: inline-flex;
   margin-left: 10px;
   margin-right: 10px;
+}
+.breadcrumbs__item{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    padding-top: 5px;
+    display: none;
+    z-index: 10;
+}
+.breadcrumbs__dropdown{
+    padding: 15px 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    -webkit-box-shadow: -2px -1px 18px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px -1px 18px -7px rgba(0,0,0,0.75);
+    box-shadow: -2px -1px 18px -7px rgba(0,0,0,0.75);
+}
+
+.breadcrumbs__dropdown li {
+    margin-bottom: 15px;
+}
+
+.breadcrumbs li:hover .breadcrumbs__item{
+    display: block;
 }
 
 .models-cards {
@@ -7941,6 +8000,9 @@ body.overflow{
     }
 }
 @media(max-width: 767px){
+    .breadcrumbs a{
+        font-size: 13px;
+    }
     .models-cards .card-model .pay .pay-types, .models-cards .card-model .pay .brand{
         margin-bottom: 10px;
         font-size: 13px;
@@ -8071,6 +8133,9 @@ body.overflow{
     }
 }
 @media(min-width: 992px){
+    .breadcrumbs__dropdown{
+        padding: 18px 12px;
+    }
     .hidden-lg{
         display: none;
     }
@@ -8361,6 +8426,9 @@ body.overflow{
     }
 }
 @media(min-width: 1600px) and (max-width: 1900px){
+    .models-cards .card-model .pay .brand{
+        font-size: 13px;
+    }
     .header-menu > ul > li > a{
         padding: 14px 28px 20px 15px;
     }
