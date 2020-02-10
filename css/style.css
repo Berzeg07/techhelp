@@ -8213,6 +8213,7 @@ body.overflow{
     }
     .table .table-row > .col{
         width: auto !important;
+        margin-left: 10px;
     }
     .table .table-content > .table-row .title{
         font-size: 14px;

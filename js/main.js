@@ -117,13 +117,26 @@ $(document).ready(function() {
     });
 
     //Yandex map API
-    ymaps.ready(function() {
-        const myMap = new ymaps.Map('map', {
-            center: [55.753215, 37.622504],
-            zoom: 8,
-            controls: ['smallMapDefaultSet']
-        });
-
+    var show = $('.services');
+    var showTop = show.offset().top;
+    var newMap = document.querySelector('.new-map');
+    $(window).bind('scroll', function() {
+        var windowTop = $(this).scrollTop();
+        if (windowTop > showTop) {
+            $(window).unbind('scroll');
+            newMap.setAttribute("src", "https://api-maps.yandex.ru/2.1/?apikey=719481d4-cbf7-4ff5-aff9-ebf6e9a94d1e&lang=ru_RU");
+            setTimeout(function() {
+                ymaps.ready(function() {
+                    const myMap = new ymaps.Map('map', {
+                        center: [55.753215, 37.622504],
+                        zoom: 8,
+                        controls: ['smallMapDefaultSet']
+                    });
+                });
+            }, 500);
+            return;
+        }
     });
+
 
 });
